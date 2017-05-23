@@ -1,0 +1,11 @@
+devMode = true
+
+token = tianxiaoyu
+
+# 正式账号-环保
+appId=wx841aab8238e40c2b
+appSecret=d7189d310ee51b4ffbac25e7f2036a14
+
+#是否对消息进行加密，是否对消息进行加密，对应于微信平台的消息加解密方式，false支持明文模式及兼容模式，true支持安全模式及兼容模式
+encryptMessage=false
+encodingAesKey=Y4AsrRCmlhuMUBxEe0VZty6Ey9EnlJnOJOV0t9tPSVz
