@@ -5,13 +5,13 @@ INSERT
         RUBBISH_CAT(
             CAT_ID
             ,NAME
-            ,DESC
+            ,`DESC`
         )
     VALUES
         (
             :catId
             ,:name
-            ,: DESC
+            ,:desc
         );
 --------------------------------------------
 --updateRubbishCat
@@ -20,7 +20,7 @@ UPDATE
     SET
         CAT_ID = :catId
         ,NAME = :name
-        ,DESC = : DESC
+        ,`DESC` = :desc
     WHERE
         CAT_ID = :catId;
 --------------------------------------------
@@ -35,8 +35,16 @@ DELETE
 SELECT
         CAT_ID
         ,NAME
-        ,DESC
+        ,`DESC`
     FROM
         RUBBISH_CAT
     WHERE
         CAT_ID = :catId;
+--------------------------------------------
+--listRubbishCat
+SELECT
+        CAT_ID
+        ,NAME
+        ,`DESC`
+    FROM
+        RUBBISH_CAT

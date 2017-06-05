@@ -1,5 +1,8 @@
 package com.nanyou.admin.service.Impl;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +34,14 @@ public class RubbishCatServiceImpl implements RubbishCatService {
 
 	public RubbishCat getRubbishCat(Long catId) {
 		return rubbishCatJdbcDao.getRubbishCat(catId);
+	}
+
+	public List<RubbishCat> listAllRubbishCat() {
+		return rubbishCatJdbcDao.listAllRubbishCat();
+	}
+
+	public Map listRubbishCat(Map params) {
+		return rubbishCatJdbcDao.listRubbishCat(params);
 	}
 
 }

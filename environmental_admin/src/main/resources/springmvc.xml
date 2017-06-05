@@ -11,6 +11,9 @@
 
 	<mvc:annotation-driven/>
 	
+	<!-- 配置Swagger -->
+	<bean class="com.nanyou.admin.config.MySwaggerConfig" />
+	
     
     <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射,解决Ajax乱码问题 -->
 	<bean  

@@ -2,6 +2,7 @@ package com.nanyou.admin.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nanyou.common.model.RubbishCat;
 import com.nanyou.framework.jdbc.BaseJdbcDao;
+import com.nanyou.framework.util.PageUtils;
 
 @Repository
 public class RubbishCatJdbcDao extends BaseJdbcDao {
@@ -49,5 +51,24 @@ public class RubbishCatJdbcDao extends BaseJdbcDao {
 		}
 		return (RubbishCat) list.iterator().next();
 	}
+	
+	public List<RubbishCat> listAllRubbishCat() {
+		String sql = loadSQL("listRubbishCat");
+		return getNamedParameterJdbcTemplate().query(sql,
+				new BeanPropertyRowMapper(RubbishCat.class));
+	}
+	
+	public Map listRubbishCat(Map params){
+		Map pageData = new HashMap();
+        String sql = loadSQL("listRubbishCat", params);
+        Integer totalCount = getNamedParameterJdbcTemplate().queryForObject(getTotalCountString(sql), params, Integer.class);
+        pageData.put("totalCount", totalCount);
+        pageData.put("totalPage", PageUtils.getTotalPage(totalCount));
 
+        sql=getPaginationString(sql, PageUtils.getStartNum((Integer)params.get("page")), PageUtils.pageSize);
+        List<RubbishCat> list = getNamedParameterJdbcTemplate().query(sql, params, new BeanPropertyRowMapper(RubbishCat.class));
+        pageData.put("data", list);
+        return pageData;
+	}
+	
 }
