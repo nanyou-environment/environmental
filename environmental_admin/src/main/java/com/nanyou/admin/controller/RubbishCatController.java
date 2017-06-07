@@ -45,7 +45,7 @@ public class RubbishCatController {
 	
 	@RequestMapping(value="/create",method = RequestMethod.POST)
 	@ResponseBody
-	@ApiOperation(value = "创建垃圾分类列表", notes = "{\"name\":\"报纸瓶子\",\"desc\":\"这是一个测试\"}")
+	@ApiOperation(value = "创建垃圾分类", notes = "{\"name\":\"报纸瓶子\",\"desc\":\"这是一个测试\"}")
 	public Map create(@RequestBody RubbishCat rubbishCat){
 		Map result = new HashMap();
 		try{
@@ -61,7 +61,7 @@ public class RubbishCatController {
 	
 	@RequestMapping(value="/update",method = RequestMethod.POST)
 	@ResponseBody
-	@ApiOperation(value = "更新垃圾分类列表", notes = "{\"catId\":\"1\",\"name\":\"报纸瓶子\",\"desc\":\"这是一个测试\"}")
+	@ApiOperation(value = "更新垃圾分类", notes = "{\"catId\":\"1\",\"name\":\"报纸瓶子\",\"desc\":\"这是一个测试\"}")
 	public Map update(@RequestBody RubbishCat rubbishCat){
 		Map result = new HashMap();
 		try{
