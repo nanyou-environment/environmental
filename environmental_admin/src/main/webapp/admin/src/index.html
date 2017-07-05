@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+		
+	<title>短信群发平台</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="../bower_components/ace_admin/components/jquery.gritter/css/jquery.gritter.min.css">
+	<link rel="stylesheet" href="../bower_components/ace_admin/assets/css/bootstrap.css" />
+	<link rel="stylesheet" href="../bower_components/ace_admin/components/font-awesome/css/font-awesome.css" />
+	
+	<link rel="stylesheet" href="../bower_components/ace_admin/assets/css/ace-fonts.css" />
+	<link rel="stylesheet" href="global/css/font.css" />
+	<link rel="stylesheet" href="../bower_components/ace_admin/assets/css/ace.css" id="main-ace-style" />
+	
+	<link rel="stylesheet" href="../bower_components/ace_admin/assets/css/ace-skins.css">
+	<!--[if lte IE 9]>
+		<link rel="stylesheet" href="../bower_components/ace_admin/assets/css/ace-part2.css" class="ace-main-stylesheet" />
+	<![endif]-->
+	<!--[if lte IE 9]>
+	  <link rel="stylesheet" href="../bower_components/ace_admin/assets/css/ace-ie.css" />
+	<![endif]-->
+	<!--[if lte IE 8]>
+		<script src="../bower_components/ace_admin/components/html5shiv/dist/html5shiv.min.js"></script>
+		<script src="../bower_components/ace_admin/components/respond/dest/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]>
+	  <script src="../bower_components/ace_admin/components/ExplorerCanvas/excanvas.js"></script>
+	<![endif]-->
+  </head>
+ 
+ <body ng-controller="MainController" class="no-skin" style="overflow:hidden;">
+    <div class="navbar navbar-default" ng-class="{'navbar-fixed-top': ace.settings.navbar}" ng-include="'global/layout/navbar.html'"></div>
+
+	<div class="main-container" ng-class="{'container': ace.settings.container}">
+		
+		<div id="sidebar" class="sidebar responsive" ng-controller="SidebarCtrl" ace-sidebar props="ace.sidebar" scroll="true" hover="true" ng-class="{'menu-min': ace.sidebar.minimized, 'sidebar-fixed': ace.settings.sidebar, 'compact': ace.settings.compact}" ng-include="'global/layout/sidebar.html'"></div>
+		
+		<div class="main-content"><div class="main-content-inner">
+			<div class="breadcrumbs" ng-class="{'breadcrumbs-fixed': ace.settings.breadcrumbs}" ng-include="'global/layout/breadcrumbs.html'"></div>
+			<div class="page-content" main-content>
+				<ui-view ng-show="!viewContentLoading"></ui-view>
+			</div>
+		</div></div>
+		
+		
+		<!-- <div class="footer" ng-include="'global/layout/footer.html'"></div> -->
+		
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+		
+	</div>
+	
+	<div ng-show="viewContentLoading" class="ajax-loading-overlay ajax-overlay-body"><i class="ajax-loading-icon fa fa-spin fa-spinner fa-2x orange"></i> </div>
+	
+
+		<!--[if !IE]> -->
+		<script src="../bower_components/ace_admin/components/jquery/dist/jquery.js"></script>
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+		<script src="../bower_components/ace_admin/components/jquery.1x/dist/jquery.js"></script>
+		<![endif]-->
+    
+	<script type="text/javascript">
+		if('ontouchstart' in document.documentElement) document.write("<script src='../bower_components/ace_admin/components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+	</script>
+	
+    <script src="../bower_components/ace_admin/components/angular/angular.js"></script>
+	<script src="../bower_components/ace_admin/components/angular-animate/angular-animate.js"></script>
+	<script src="../bower_components/ace_admin/components/angular-sanitize/angular-sanitize.js"></script>
+
+	<script src="../bower_components/ace_admin/components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/ace_admin/components/angular-resource/angular-resource.js"></script>
+	
+	<script src="../bower_components/ace_admin/components/oclazyload/dist/ocLazyLoad.js"></script>
+	<script src="../bower_components/ace_admin/components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="../bower_components/ace_admin/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="../bower_components/ace_admin/components/jquery.gritter/js/jquery.gritter.min.js"></script>
+	
+	<script src="../bower_components/ace_admin/components/ngstorage/ngStorage.js"></script>
+		
+	
+	<script src="../bower_components/ace_admin/components/bootstrap/js/transition.js"></script><!-- for sidebar transition events -->
+	
+	<!-- ACE -->
+	<script src="../bower_components/ace_admin/assets/js/ace-small.js"></script>
+	<script src="../bower_components/ace_admin/assets/js/ace-elements.js"></script>
+	
+	<!-- ACE ANGULAR -->
+    <script src="global/js/app.js"></script>
+	<!-- INSERT TEMPLATE CACHE -->
+	
+	
+	<script src="global/js/directives/ace.js"></script>
+	<script src="global/js/directives/vendor.js"></script>
+	<script src="global/js/global.js"></script>
+	<script src="global/js/globalUtilsServ.js"></script>
+	<script src="global/js/auth.js"></script>
+	<script src="global/js/main.js"></script>
+	<script src="global/js/ui-validate.js"></script>
+	<script src="global/js/ui-load.js"></script>
+	<script src="global/js/config.lazyload.js"></script>
+	<script src="global/js/config.router.js"></script>
+	<script src="global/js/sidebar.js"></script>
+	<script src="global/js/confirmModal.js"></script>
+</body>
+</html>

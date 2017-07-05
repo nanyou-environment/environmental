@@ -1,0 +1,10 @@
+<a href="" uib-dropdown-toggle class="dropdown-toggle">
+	<img class="nav-user-photo" ng-src="{{ace.site.avatars}}" alt="{{app.admin.name}}" />
+	<span class="user-info">
+		<small>管理员,</small> {{app.admin.name}}
+	</span>
+	<i class="ace-icon fa fa-caret-down"></i>
+</a>
+<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+	<li  ng-click="logout();"><a href=""><i class="ace-icon fa fa-power-off"></i> 退出</a></li>
+</ul>

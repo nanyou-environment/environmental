@@ -1,0 +1,12 @@
+<!-- <div class="sidebar-shortcuts" ng-include="'global/layout/sidebar/shortcuts.html'"></div> -->
+
+<ul class="nav nav-list">
+  <li ng-repeat="item in ::sidebar" ng-include="'global/layout/sidebar/item.html'" ng-class="{'open':item.submenu && isSubOpen(item.name), 'active': isActiveItem(item.name), 'hover': $parent.ace.settings.hover, 'highlight': $parent.ace.settings.highlight}"></li>
+</ul>
+
+<div class="sidebar-toggle sidebar-collapse">		
+  <i class='ace-icon fa' ng-class="{'fa-angle-double-left': !ace.sidebar.minimized, 'fa-angle-double-right': ace.sidebar.minimized}"></i>
+</div>
+<div>
+	<img src="{{ace.site.logo}}" style="width:100%;">
+</div>
