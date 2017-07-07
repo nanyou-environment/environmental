@@ -129,6 +129,25 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', 'APP_MODUL
 	                templateUrl: 'user/list/user-list.html',
 	                resolve:lazyLoad(['userList'])
 	            })
+	            .state('rubbish', {
+	                url: '/rubbish',
+	                abstract: true,
+	                title: '垃圾管理',
+	                template:'<div ui-view></div>'
+	            })
+	            .state('rubbish.catagory', {
+	                url: '/catagory',
+	                title: '垃圾分类',
+	                templateUrl: 'rubbish/catagory/rubbish-catagory.html',
+	                resolve:lazyLoad(['rubbishCatagory'])
+	            })
+	            .state('rubbish.list', {
+	                url: '/list',
+	                title: '垃圾列表',
+	                templateUrl: 'rubbish/list/rubbish-list.html',
+	                resolve:lazyLoad(['rubbishList'])
+	            })
+	            
 	            
 	            
         }

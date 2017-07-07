@@ -27,7 +27,7 @@ app.controller('MainController', function (GG,$window,$scope, $rootScope, $http,
 	$scope.ace.site = {
 		avatars: GG.BASE + '/admin/src/global/image/user.jpg',
 		logo: GG.BASE + '/admin/src/global/image/image-1.jpg',
-		brand_text : '短信群发',
+		brand_text : '垃圾回收',
 		brand_icon : 'fa fa-leaf',
 		version : '1.4'
 	};

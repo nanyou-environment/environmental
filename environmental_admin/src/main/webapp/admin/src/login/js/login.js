@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
 	
 	function check(){
 		if($("#username").val()==null){
-			alert('请输入手机号码！');
+			alert('请输入用户名！');
 			return false;
 		}else if($("#password").val()==null){
 			alert('请输入密码！');
@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
 					password : hex_md5($("#password").val())
 				},
 				success : function(data) {
-					if (data.code == 200) {
+					if (data.result) {
 						sessionStorage.setItem("token", data.token);
 						sessionStorage.setItem("admin", JSON.stringify(data.data));
 						location.href = 'index.html';

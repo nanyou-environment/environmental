@@ -14,6 +14,13 @@
 	<!-- 配置Swagger -->
 	<bean class="com.nanyou.admin.config.MySwaggerConfig" />
 	
+	<mvc:interceptors>
+	    <bean class="com.nanyou.framework.handler.SpringMVCInterceptor" init-method="init">
+			<property name="unfilteredURIs"
+				value="(/)|(.*/system/login)|(.*/system/qiniu/.*)" />
+		</bean>
+	</mvc:interceptors>
+	
     
     <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射,解决Ajax乱码问题 -->
 	<bean  

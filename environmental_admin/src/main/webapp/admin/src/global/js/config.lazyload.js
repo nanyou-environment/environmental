@@ -1,6 +1,9 @@
 //app所需模块
 angular.module('app').constant('APP_MODULES', {
 	
+	'userList':['user/list/serv/userList-serv.js','user/list/ctrl/userList-ctrl.js'],
+	'rubbishCatagory':['rubbish/catagory/serv/rubbishCatagory-serv.js','rubbish/catagory/ctrl/rubbishCatagory-ctrl.js'],
+	'rubbishList':['rubbish/list/serv/rubbishList-serv.js','rubbish/list/ctrl/rubbishList-ctrl.js'],
 	
 });
 //第三方模块
